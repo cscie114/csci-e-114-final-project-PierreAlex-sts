@@ -1,0 +1,57 @@
+---
+title: Races
+layout: base
+pagination:
+    data: races.data
+    size: 1
+    alias: rcs
+    addAllPagesToCollections: true
+permalink: "races/{{ rcs.id | slug }}/"
+tags:
+    - 'races'
+eleventyComputed:
+    title: "{{ rcs.competition.name }}"
+    check: "{{ rcs.type }}"
+    laps: "{{ rcs.laps.total }}"
+    map: "{{ rcs.circuit.image }}"
+    date: "{{ rcs.date }}"
+    status: "{{ rcs.status }}"
+---
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <p>{{ rcs.circuit.name }}</p>
+      <img src={{rcs.circuit.image}} />
+    </div>
+    <div class="col">
+      info about the track. coming soon
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-auto ">
+      <table class="table table-hover table-striped">
+        <tr class="text-white">
+          <th class="text-white">Position</th>
+          <th class="text-white">Driver name</th>
+          <th class="text-white">Number</th>
+          <th class="text-white">Team</th>
+          <th class="text-white" width="10%">Logo</th>
+          <th class="text-white">Time</th>
+          <th class="text-white">Pits Stop</th>
+        </tr>
+        {% for item in rcs._ranking %}
+          <tr>
+            <td class="text-white">{{ item.position }}</td>
+            <td class="text-white">{{ item.driver.name }}</td>
+            <td class="text-white">{{ item.driver.number }}</td>
+            <td class="text-white">{{ item.team.name }}</td>
+            <td class="text-white"><img src={{ item.team.logo }} width="50%" /></td>
+            <td class="text-white">{{ item.time }}</td>
+            <td class="text-white">{{ item.pits }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>

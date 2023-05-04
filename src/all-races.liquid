@@ -1,0 +1,35 @@
+---
+title: Calendar
+layout: base
+---
+
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-10 ">
+    <table class="table table-hover table-striped">
+      <tr class="text-white">
+        <th class="text-white">Name</th>
+        <th class="text-white">Date</th>
+        <th class="text-white">Tracks</th>
+        <th class="text-white">Status</th>
+        <th class="text-white">Total laps</th>
+        <th class="text-white">Type</th>
+      </tr>
+      {% for item in collections.races %}
+        {% if item.data.check == "Race" %}
+          <tr>
+            <td class="text-white">
+              <a href={{ item.url }}>{{ item.data.title }}</a>
+            </td>
+            <td class="text-white">{{ item.data.date }}</td>
+            <td class="text-white"><img src="{{ item.data.map }}" width="10%" /></td>
+            <td class="text-white">{{ item.data.status }}</td>
+            <td class="text-white">{{ item.data.laps }}</td>
+            <td class="text-white">{{ item.data.check }}</td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </table>
+  </div>
+  <div class="col-1"></div>
+</div>

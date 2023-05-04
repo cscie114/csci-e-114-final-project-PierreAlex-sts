@@ -5,14 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"build": "eleventy",
-	"start": "eleventy --serve"
-
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cscie114/csci-e-114-final-project-PierreAlex-sts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bug": {
+    "url": "https://github.com/cscie114/csci-e-114-final-project-PierreAlex-sts/issues"
+  },
+  "homepage": "https://github.com/cscie114/csci-e-114-final-project-PierreAlex-sts#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-fetch": "^4.0.0",
+    "dotenv": "^16.0.3"
   }
 }
