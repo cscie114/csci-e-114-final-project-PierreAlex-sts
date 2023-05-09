@@ -17,7 +17,7 @@ export default async (request, context) => {
     edge.config((eleventyConfig) => {
       // Add some custom Edge-specific configuration
       // eleventyConfig.addFilter("json", obj => JSON.stringify(obj, null, 2));
-      eleventyConfig.addGlobalData("date", context.date);
+      eleventyConfig.addGlobalData("date", context.timestamp);
       eleventyConfig.addFilter("nextRace", (races) => {
         console.log(races);
       })
