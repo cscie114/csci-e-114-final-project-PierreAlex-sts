@@ -2,7 +2,7 @@
 name: GitHub Actions to deploy on Netlify 
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 env: 
-  NPS_API_KEY: ${{ secrets.FORMULA_API_KEY}}
+  FORMULA_API_KEY: ${{ secrets.FORMULA_API_KEY}}
 on: [push]
 jobs:
   Explore-GitHub-Actions:
