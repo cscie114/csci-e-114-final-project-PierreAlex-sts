@@ -1,3 +1,13 @@
 ---
 layout: base
+pagination:
+    data: races.data
+    size: 1
+    alias: races
 ---
+
+<div></div>
+{% edge "liquid" races %}
+  {% assign test = races.data | nextRace %}
+  <p>{{ date }}</p>
+{% endedge %}
