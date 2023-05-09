@@ -12,7 +12,7 @@ This application is using 11ty to build static pages with the data loaded on it.
 The REST API is provided by: https://api-sports.io/
 
 # CD/CI
-I simplified the file used in Assignment 5 to deplay automatically on Netlify
+I simplified the file used in Assignment 5 to deploy automatically on Netlify
 
 # "Extraordinary Disctinction"
 Once again I couldn't make this kind of feature works, my plan was to build an edge-function on the homepage of the web application to let the user know
