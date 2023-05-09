@@ -40,7 +40,6 @@ module.exports = async function() {
         console.log("Error with Races API");
         console.log(err);
     }
-    console.log(races.data[0]._ranking);
     return races;
 }
 

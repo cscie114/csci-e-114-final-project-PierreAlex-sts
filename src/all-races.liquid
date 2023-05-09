@@ -11,6 +11,7 @@ layout: base
         <th class="text-white">Name</th>
         <th class="text-white">Date</th>
         <th class="text-white">Tracks</th>
+        <th class="text-white">Winner</th>
         <th class="text-white">Status</th>
         <th class="text-white">Total laps</th>
         <th class="text-white">Type</th>
@@ -22,7 +23,8 @@ layout: base
               <a href={{ item.url }}>{{ item.data.title }}</a>
             </td>
             <td class="text-white">{{ item.data.date }}</td>
-            <td class="text-white"><img src="{{ item.data.map }}" width="10%" /></td>
+            <td class="text-white"><img src="{{ item.data.map }}" width="30%" /></td>
+            <td class="text-white"><img src="{{ item.data.winner }}" width="50%" /></td>
             <td class="text-white">{{ item.data.status }}</td>
             <td class="text-white">{{ item.data.laps }}</td>
             <td class="text-white">{{ item.data.check }}</td>

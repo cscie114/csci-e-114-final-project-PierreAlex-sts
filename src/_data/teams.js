@@ -4,20 +4,20 @@ const eleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function() {
 
-    let driversURL = "https://v1.formula-1.api-sports.io/rankings/drivers";
+    let teamsURL = "https://v1.formula-1.api-sports.io/rankings/teams";
     let userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:102.0) Gecko/20100101 Firefox/102.0";
     
     let racesParams = {
         season: "2023"
     }
-    let drivers = {data:[]}; 
+    let teams = {data:[]}; 
     
     try {
 
         let params = new URLSearchParams(racesParams);
         let queryString = params.toString();
-        let url = driversURL + "?" + queryString;
-        let driversData = await eleventyFetch(url, {
+        let url = teamsURL + "?" + queryString;
+        let teamsData = await eleventyFetch(url, {
             duration: "1d",
             fetchOptions: {
                 headers: {
@@ -27,10 +27,9 @@ module.exports = async function() {
             },
             type: "json"
         });
-        drivers.data.push(...driversData.response);
+        teams.data.push(...teamsData.response);
     } catch (err) {
-        console.log("Error with Races API");
-        console.log(err);
+        console.log("Error with Races");
     }
-    return drivers;
+    return teams;
 }

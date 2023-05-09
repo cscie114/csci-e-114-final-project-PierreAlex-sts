@@ -16,6 +16,7 @@ eleventyComputed:
     map: "{{ rcs.circuit.image }}"
     date: "{{ rcs.date }}"
     status: "{{ rcs.status }}"
+    winner: "{{ rcs._ranking[0].driver.image}}"
 ---
 
 <div class="container text-center">
@@ -25,7 +26,14 @@ eleventyComputed:
       <img src={{rcs.circuit.image}} />
     </div>
     <div class="col">
-      info about the track. coming soon
+      <h3>Fastest Lap:</h3>
+      {% for driver in rcs._ranking %}
+        {% if rcs.fastest_lap.driver.id == driver.driver.id %}
+          <img src={{driver.driver.image}} width="20%" />
+          <p>{{ driver.driver.name }}</p>
+        {% endif %}
+      {% endfor %}
+      <p>{{ rcs.fastest_lap.time }}</p>
     </div>
   </div>
   <div class="row">
